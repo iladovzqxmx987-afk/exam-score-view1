@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <script>
+(function () {
+  const PASSWORD = "525361Sy"; // ← 你自己改成想要的密码
+
+  const input = prompt("请输入访问密码：");
+  if (input !== PASSWORD) {
+    document.documentElement.innerHTML = "";
+    document.body.style.background = "#fff";
+  }
+})();
+</script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>浙江省公务员考试成绩查询</title>
+
+<style>
+body {
+  margin: 0;
+  background: #eaf3f8;
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC",
+               "Microsoft YaHei", Arial, sans-serif;
+  color: #333;
+}
+
+/* 顶部蓝色栏 */
+.topbar {
+  background: linear-gradient(90deg, #5bb6e5, #7fc9ee);
+  color: #fff;
+  padding: 12px 14px 6px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* 顶栏下信息行 */
+.top-info {
+  background: #eef7fc;
+  color: #444;
+  font-size: 13px;
+  padding: 6px 14px;
+  border-bottom: 1px solid #c5e2f3;
+}
+
+/* 主体 */
+.main {
+  display: flex;
+  margin: 14px;
+  gap: 12px;
+}
+
+/* 左侧导航 */
+.sidebar {
+  width: 28%;
+  background: #d9edf7;
+  border: 1px solid #bcdff1;
+  font-size: 14px;
+}
+
+.sidebar .nav-title {
+  background: #5bb6e5;
+  color: #fff;
+  padding: 10px;
+  font-weight: 600;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 12px;
+  border-top: 1px solid #c5e2f3;
+  color: #036;
+}
+
+.sidebar li.active {
+  background: #eef7fc;
+  font-weight: 600;
+}
+
+/* 右侧内容 */
+.content {
+  width: 72%;
+  background: #fff;
+  border: 1px solid #c5e2f3;
+  padding: 16px;
+}
+
+/* 面包屑 */
+.breadcrumb {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+/* 标题 */
+.title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 8px 0 8px;
+}
+
+/* 考生信息行 */
+.candidate-info {
+  text-align: center;
+  font-size: 13px;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+/* 表格 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+th {
+  background: #9fd3ea;
+  padding: 10px;
+  border: 1px solid #bcdff1;
+  font-weight: 600;
+}
+
+td {
+  padding: 12px;
+  border: 1px solid #bcdff1;
+  text-align: center;
+}
+
+.score {
+  font-weight: 700;
+}
+
+/* 说明 */
+.notice {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #c00000;
+  text-align: center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  浙江省公务员考试录用网
+</div>
+
+<div class="top-info">
+  欢迎您：孙越&nbsp;&nbsp;&nbsp;&nbsp;报考考试：浙江省2025年度考试录用公务员
+</div>
+
+<div class="main">
+
+  <!-- 左侧导航 -->
+  <div class="sidebar">
+    <div class="nav-title">导航菜单</div>
+    <ul>
+      <li>注册信息维护</li>
+      <li>查看报考文件</li>
+      <li>查看报考状态</li>
+      <li class="active">查询考试成绩</li>
+      <li>打印准考证</li>
+    </ul>
+  </div>
+
+  <!-- 右侧内容 -->
+  <div class="content">
+    <div class="breadcrumb">
+      您现在的位置： 查询考试成绩 &gt; 报考导航
+    </div>
+
+    <div class="title">
+      浙江省2025年度考试录用公务员笔试成绩查询
+    </div>
+
+    <div class="candidate-info">
+      考生姓名：孙越&nbsp;&nbsp;&nbsp;
+      身份证号：331002200305230621&nbsp;&nbsp;&nbsp;
+      准考证号：110071301916
+    </div>
+
+    <table>
+      <tr>
+        <th>科目名称</th>
+        <th>成绩</th>
+      </tr>
+      <tr>
+        <td>行政职业能力测验（A）</td>
+        <td class="score">65.40</td>
+      </tr>
+      <tr>
+        <td>申论（A）</td>
+        <td class="score">61.00</td>
+      </tr>
+      <tr>
+        <td>总分</td>
+        <td class="score">126.40</td>
+      </tr>
+      <tr>
+        <td>排名</td>
+        <td class="score">12</td>
+      </tr>
+    </table>
+
+    <div class="notice">
+      说明：“-1”表示缺考，“-2”表示违纪，“-4”表示雷同。
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

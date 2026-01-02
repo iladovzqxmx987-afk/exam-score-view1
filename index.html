@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <script>
-(function () {
-  const PASSWORD = "525361Sy"; // ← 你自己改成想要的密码
-
-  const input = prompt("请输入访问密码：");
-  if (input !== PASSWORD) {
-    document.documentElement.innerHTML = "";
-    document.body.style.background = "#fff";
-  }
-})();
-</script>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>浙江省公务员考试成绩查询</title>
@@ -219,4 +207,77 @@ td {
 </div>
 
 </body>
+  <!-- 登录遮罩 -->
+<div id="login-mask" style="
+  position: fixed;
+  inset: 0;
+  background: #f5f7fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC',
+               'Microsoft YaHei', Arial, sans-serif;
+">
+  <div style="
+    background: #fff;
+    padding: 24px 22px;
+    width: 300px;
+    border: 1px solid #c5e2f3;
+  ">
+    <div style="
+      text-align: center;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    ">
+      系统登录
+    </div>
+
+    <input id="user" placeholder="登录账号" style="
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    ">
+
+    <input id="pass" type="password" placeholder="登录密码" style="
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    ">
+
+    <button onclick="checkLogin()" style="
+      width: 100%;
+      padding: 9px;
+      background: #5bb6e5;
+      border: none;
+      color: #fff;
+      font-size: 14px;
+    ">
+      登录
+    </button>
+  </div>
+</div>
+
+<script>
+  const VALID_USER = "331002200305230621";   // ← 改成你要的账号
+  const VALID_PASS = "525361Sy";  // ← 改成你要的密码
+
+  function checkLogin() {
+    const u = document.getElementById("user").value;
+    const p = document.getElementById("pass").value;
+
+    if (u === VALID_USER && p === VALID_PASS) {
+      document.getElementById("login-mask").style.display = "none";
+    } else {
+      alert("账号或密码错误");
+    }
+  }
+</script>
+
 </html>
+
